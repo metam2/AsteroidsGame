@@ -41,6 +41,7 @@ class Star //note that this class does NOT extend Floater
     endShape(CLOSE);
 
   	angle-= 1.6;
+    
   }
 
   public void rotate()

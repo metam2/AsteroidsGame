@@ -3,12 +3,12 @@ Spaceship ship;
 ArrayList <Star> stars;
 public void setup() 
 {
+  size(500, 500);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
 
   for(int i = 0; i < 20; i++)
     {stars.add(new Star());}
-  size(500, 500);
   frameRate(20);
 }
 public void draw() 
