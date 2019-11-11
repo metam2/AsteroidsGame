@@ -30,9 +30,9 @@ public void draw()
   	if(key == 's')
   		ship.accelerate(-0.1);
   	if(key == 'd')
-  		ship.turn(5);
+  		ship.turn(10);
   	if(key == 'a')
-  		ship.turn(-5);
+  		ship.turn(-10);
   }
   ship.move();
   ship.show();
