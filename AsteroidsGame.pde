@@ -1,11 +1,13 @@
 //your variable declarations here
 Spaceship ship;
 ArrayList <Star> stars;
+Asteroid as;
 public void setup() 
 {
   size(500, 500);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
+  as = new Asteroid();
 
   for(int i = 0; i < 20; i++)
     {stars.add(new Star());}
@@ -22,6 +24,8 @@ public void draw()
     stars.get(i).rotate();
     stars.get(i).show();
   }
+
+  as.show();
 
   if(keyPressed)
   {
