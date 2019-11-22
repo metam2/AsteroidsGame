@@ -17,15 +17,15 @@ public void draw()
 {
   //your code here
   fill(0, 0, 0);
-  rect(0, 0, width, height);
+  //rect(0, 0, width, height);
 
+  /*
   for(int i = 0; i < stars.size(); i++)
   {
     stars.get(i).rotate();
     stars.get(i).show();
   }
-
-  as.show();
+*/
 
   if(keyPressed)
   {
@@ -41,6 +41,7 @@ public void draw()
   ship.move();
   ship.show();
   
+  as.show();
 }
 
 
