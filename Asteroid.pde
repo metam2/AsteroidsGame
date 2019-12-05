@@ -33,25 +33,7 @@ class Asteroid extends Floater
 		super.turn(rotSpeed);
 		super.move();
 	}
-//DELETE LATER
-	private void printArray(int[] arr)
-	{
-		System.out.println();
-		System.out.print("[");
-		for(int i = 0; i < arr.length; i++)
-		{
-			System.out.print(arr[i] + ", ");
-		}
-	}
 
-//DELETE
-	public void showCorners()
-	{
-		fill(0);
-		noStroke();
-		for(int i = 0; i < corners; i++)
-		{
-			ellipse((int)(xCorners[i] + myCenterX), (int)(yCorners[i] + myCenterY), 2, 2);
-		}
-	}
+	public float getX() {return (float)myCenterX;}
+	public float getY() {return (float)myCenterY;}
 }

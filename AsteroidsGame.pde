@@ -2,22 +2,26 @@
 Spaceship ship;
 ArrayList <Star> stars;
 ArrayList <Asteroid> asteroids;
+ArrayList <Bullet> bullets;
 public void setup() 
 {
   size(500, 500);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
   asteroids = new ArrayList <Asteroid>();
+  bullets = new ArrayList <Bullet>();
 
   for(int i = 0; i < 30; i++)
     {stars.add(new Star());}
   for(int i = 0; i < 10; i++)
     {asteroids.add(new Asteroid());}
+
+  bullets.add(new Bullet((double)ship.getX(), (double)ship.getY(), ship.getDir()));
+  //bullets.add(new Bullet());
   frameRate(20);
 }
 public void draw() 
 {
-  //your code here
   fill(0, 0, 0);
   rect(0, 0, width, height);
 
@@ -27,19 +31,29 @@ public void draw()
     stars.get(i).rotate();
     stars.get(i).show();
   }
+  for(int i = 0; i < bullets.size(); i++)
+  {
+    bullets.get(i).move();
+    bullets.get(i).show();
+  }
 
   for(int i = 0; i < asteroids.size(); i++)
   {
     asteroids.get(i).move();
     asteroids.get(i).show();
+    if(dist(ship.getX(), ship.getY(), asteroids.get(i).getX(), asteroids.get(i).getY()) < 20)
+    {
+      asteroids.remove(i);
+      i--;
+    }
   }
 
   if(keyPressed)
   {
     if(key == 'w')
-   		{ship.accelerate(0.1);}
+   		{ship.accelerate(0.2);}
   	if(key == 's')
-  		ship.accelerate(-0.1);
+  		ship.accelerate(-0.2);
   	if(key == 'd')
   		ship.turn(10);
   	if(key == 'a')
@@ -47,6 +61,7 @@ public void draw()
   }
   ship.move();
   ship.show();
+
   
 }
 
