@@ -1,31 +1,38 @@
 //your variable declarations here
 Spaceship ship;
 ArrayList <Star> stars;
-Asteroid as;
+ArrayList <Asteroid> asteroids;
 public void setup() 
 {
   size(500, 500);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
-  as = new Asteroid();
+  asteroids = new ArrayList <Asteroid>();
 
-  for(int i = 0; i < 20; i++)
+  for(int i = 0; i < 30; i++)
     {stars.add(new Star());}
+  for(int i = 0; i < 10; i++)
+    {asteroids.add(new Asteroid());}
   frameRate(20);
 }
 public void draw() 
 {
   //your code here
   fill(0, 0, 0);
-  //rect(0, 0, width, height);
+  rect(0, 0, width, height);
 
-  /*
+  
   for(int i = 0; i < stars.size(); i++)
   {
     stars.get(i).rotate();
     stars.get(i).show();
   }
-*/
+
+  for(int i = 0; i < asteroids.size(); i++)
+  {
+    asteroids.get(i).move();
+    asteroids.get(i).show();
+  }
 
   if(keyPressed)
   {
@@ -41,7 +48,6 @@ public void draw()
   ship.move();
   ship.show();
   
-  as.show();
 }
 
 

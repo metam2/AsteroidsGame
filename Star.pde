@@ -2,13 +2,12 @@ class Star //note that this class does NOT extend Floater
 {
   //your code here
   private int radius1, radius2, radius3, radius4;
-  private int myX;
-  private int myY;
+  private int myX, myY, r, g, b;
   private float angle, angVelocity;
 
   public Star()
   {
-  	int radius = 10;
+  	int radius = (int)(Math.random() * 4 + 8);
   	myX = (int)(Math.random() * width);
   	myY = (int)(Math.random() * height);
   	angle = 0;
@@ -17,12 +16,14 @@ class Star //note that this class does NOT extend Floater
     radius2 = (int)(Math.random() * radius) ;
     radius3 = (int)(Math.random() * 0.8 * radius) + (int)(0.2 * radius);
     radius4 = (int)(Math.random() * 0.5 * radius)  + (int)(0.5 * radius);
-
+    r = (int)(Math.random() * 120 + 160);
+    g = (int)(Math.random() * 120 + 160);
+    b = (int)(Math.random() * 120 + 160);
   }
 
   public void show()
   {
-    stroke(255,255,255);
+    stroke(r, g, b, 80);
 
   	beginShape();
     vertex(myX + (cos(angle) * radius1), myY + (sin(angle) * radius1));
