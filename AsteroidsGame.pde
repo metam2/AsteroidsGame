@@ -16,7 +16,6 @@ public void setup()
   for(int i = 0; i < 10; i++)
     {asteroids.add(new Asteroid());}
 
-  bullets.add(new Bullet((double)ship.getX(), (double)ship.getY(), ship.getDir()));
   //bullets.add(new Bullet());
   frameRate(20);
 }
@@ -74,4 +73,6 @@ void keyReleased()
   	{key = 'w';}
   if(key == 'q')
     ship.hyperSpace();
+  if(key == ' ')
+    bullets.add(new Bullet());
 }
