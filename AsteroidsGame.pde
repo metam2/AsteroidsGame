@@ -16,7 +16,6 @@ public void setup()
   for(int i = 0; i < 10; i++)
     {asteroids.add(new Asteroid());}
 
-  //bullets.add(new Bullet());
   frameRate(20);
 }
 public void draw() 
@@ -32,8 +31,23 @@ public void draw()
   }
   for(int i = 0; i < bullets.size(); i++)
   {
-    bullets.get(i).move();
+    if(bullets.get(i).moveNoLoop())
+      {
+        bullets.remove(i);
+        i--;
+        continue;
+      }
     bullets.get(i).show();
+    for(int a = 0; a < asteroids.size(); a++)
+    {
+      if(dist(bullets.get(i).getX(), bullets.get(i).getY(), asteroids.get(a).getX(), asteroids.get(a).getY()) < 20)
+        {
+          bullets.remove(i);
+          asteroids.remove(a);
+          i--;
+          break;
+        }
+    }
   }
 
   for(int i = 0; i < asteroids.size(); i++)

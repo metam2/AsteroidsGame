@@ -16,6 +16,36 @@ class Bullet extends Floater
     	myDirectionY = 15 * Math.sin(dRadians) + ship.getDirY();
 	}
 
+    public boolean moveNoLoop()
+    {
+            
+        //change the x and y coordinates by myDirectionX and myDirectionY       
+        myCenterX += myDirectionX;    
+        myCenterY += myDirectionY;     
+
+        //wrap around screen    
+        if(myCenterX >width)
+        {     
+          return true;    
+        }    
+        else if (myCenterX<0)
+        {     
+          return true;    
+        }    
+        if(myCenterY >height)
+        {    
+          return true;    
+        } 
+        
+        else if (myCenterY < 0)
+        {     
+          return true;    
+        }  
+
+        return false;
+    }
+
     public float getX() {return (float)myCenterX;}
     public float getY() {return (float)myCenterY;}
+
 }
