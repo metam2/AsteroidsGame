@@ -6,7 +6,6 @@ ArrayList <Bullet> bullets;
 int count, hp;
 public void setup() 
 {
-  System.out.println("aasertjy");
   size(500, 500);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
@@ -99,7 +98,6 @@ public void draw()
 
   if(hp <= 0)
   {
-    println("AHHHHH");
     textAlign(CENTER, CENTER);
     textSize(40);
     fill(200, 0, 0);
