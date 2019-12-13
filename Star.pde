@@ -16,9 +16,9 @@ class Star //note that this class does NOT extend Floater
     radius2 = (int)(Math.random() * radius) ;
     radius3 = (int)(Math.random() * 0.8 * radius) + (int)(0.2 * radius);
     radius4 = (int)(Math.random() * 0.5 * radius)  + (int)(0.5 * radius);
-    r = (int)(Math.random() * 120 + 160);
-    g = (int)(Math.random() * 120 + 160);
-    b = (int)(Math.random() * 120 + 160);
+    r = (int)(Math.random() * 120 + 180);
+    g = (int)(Math.random() * 120 + 180);
+    b = (int)(Math.random() * 120 + 180);
   }
 
   public void show()
