@@ -8,8 +8,8 @@ class Spaceship extends Floater
     	int[] y = {0, 8, -8};
     	yCorners = y;
     	myColor = 255;
-    	myCenterX = 250;
-    	myCenterY = 250;
+    	myCenterX = width / 2;
+    	myCenterY = height / 2;
     	myDirectionX = 0;
     	myDirectionY = 0;
     	myPointDirection = 0;

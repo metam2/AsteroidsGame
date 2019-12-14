@@ -6,7 +6,7 @@ ArrayList <Bullet> bullets;
 int count, hp;
 public void setup() 
 {
-  size(500, 500);
+  size(800, 800);
   ship = new Spaceship();
   stars = new ArrayList <Star>();
   asteroids = new ArrayList <Asteroid>();
@@ -14,10 +14,10 @@ public void setup()
   count = 0;
   hp = 3;
 
-  for(int i = 0; i < 30; i++)
+  for(int i = 0; i < 70; i++)
     {stars.add(new Star());}
     
-  for(int i = 0; i < 10; i++)
+  for(int i = 0; i < 18; i++)
     {asteroids.add(new Asteroid());}
 
   frameRate(20);
@@ -88,11 +88,11 @@ public void draw()
   ship.show();
 
 
-  if(count < 100) {count++;}
+  if(count > 0) {count--;}
   else 
   {
     asteroids.add(new Asteroid());
-    count = 0;
+    count = (int)(Math.random() * 50 + 50);
   }
 
   for(int i = 0; i < hp; i++)
