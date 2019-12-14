@@ -16,6 +16,7 @@ class Bullet extends Floater
     	myDirectionY = 15 * Math.sin(dRadians) + ship.getDirY();
 	}
 
+    //returns true if the bullet is going off screen, otherwise false
     public boolean moveNoLoop()
     {
             
@@ -23,7 +24,6 @@ class Bullet extends Floater
         myCenterX += myDirectionX;    
         myCenterY += myDirectionY;     
 
-        //wrap around screen    
         if(myCenterX >width)
         {     
           return true;    

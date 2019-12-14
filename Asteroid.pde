@@ -17,8 +17,7 @@ class Asteroid extends Floater
 			xCorners[i] = (int)(cos(2 * PI * i / corners) * xRadius);
 			yCorners[i] = (int)(sin(2 * PI * i / corners) * yRadius);
 		}
-			//y[i] = (int)(cos((float)(Math.random() * 2 * PI / (float)corners) + (i * 2 * PI / (float)corners)) * 10);
-			
+		
 		myDirectionX = (int)(Math.random() * 9 - 4);
 		myDirectionY = (int)(Math.random() * 9 - 4);
 		myCenterX = (int)(Math.random() * width);

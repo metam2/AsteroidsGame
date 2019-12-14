@@ -16,6 +16,7 @@ public void setup()
 
   for(int i = 0; i < 30; i++)
     {stars.add(new Star());}
+    
   for(int i = 0; i < 10; i++)
     {asteroids.add(new Asteroid());}
 
@@ -33,6 +34,7 @@ public void draw()
     stars.get(i).rotate();
     stars.get(i).show();
   }
+  
   for(int i = 0; i < bullets.size(); i++)
   {
     if(bullets.get(i).moveNoLoop())
@@ -54,6 +56,7 @@ public void draw()
     }
   }
 
+
   for(int i = 0; i < asteroids.size(); i++)
   {
     asteroids.get(i).move();
@@ -64,19 +67,23 @@ public void draw()
       i--;
       hp--;
     }
+    
+    
   }
+  
 
   if(keyPressed)
   {
     if(key == 'w')
-   		{ship.accelerate(0.2);}
-  	if(key == 's')
-  		ship.accelerate(-0.2);
-  	if(key == 'd')
-  		ship.turn(10);
-  	if(key == 'a')
-  		ship.turn(-10);
+      {ship.accelerate(0.2);}
+    if(key == 's')
+      ship.accelerate(-0.2);
+    if(key == 'd')
+      ship.turn(10);
+    if(key == 'a')
+      ship.turn(-10);
   }
+  
   ship.move();
   ship.show();
 
@@ -106,22 +113,28 @@ public void draw()
     text("Press ENTER to play again", width / 2, height * 5 / 8);
     noLoop();
   }
+  
 }
 
 
 void keyReleased()
 {
-	if(key == 'd')
-		{key = 'w';}
+  
+  if(key == 'd')
+    {key = 'w';}
   if(key == 'a')
-  	{key = 'w';}
+    {key = 'w';}
   if(key == 'q')
     ship.hyperSpace();
   if(key == ' ')
     bullets.add(new Bullet());
   if(key == ENTER)
   {
-    setup();
-    loop();
+    if(hp <= 0)
+    {
+      setup();
+      loop();
+    }
   }
+  
 }
